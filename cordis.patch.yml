@@ -1,0 +1,10 @@
+# dsh-session-recycler bundle patch: mounts the host half (HTTP routes under
+# /x-dsh-session-recycler/*) into the profile. The browser half ships as a
+# dsh.client bundle and lands in the sidebar footer.
+- insert:
+    - id: dsh-session-recycler
+      name: dsh-session-recycler
+      config:
+        # Where deleted session directories are parked before removal, so a
+        # mistaken delete stays recoverable by hand.
+        trashDir: .session-recycler-trash
